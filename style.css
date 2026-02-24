@@ -1,0 +1,365 @@
+:root {
+  --bg: #070b1a;
+  --bg-soft: #0f1630;
+  --surface: #111a38;
+  --surface-alt: #192347;
+  --text: #f3f6ff;
+  --muted: #a8b4d6;
+  --line: rgba(243, 246, 255, 0.12);
+  --aqua: #65e5df;
+  --blue: #6d82ff;
+  --pink: #ff8db6;
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(101, 229, 223, 0.12), transparent 24%),
+    radial-gradient(circle at 86% 0%, rgba(255, 141, 182, 0.14), transparent 28%),
+    linear-gradient(180deg, #070b1a 0%, #0a1130 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 0.8px, transparent 0.8px);
+  background-size: 3px 3px;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: "Sora", sans-serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: min(1140px, 92vw);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 0;
+}
+
+.logo {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 20px;
+  background: linear-gradient(135deg, var(--aqua), var(--blue));
+  color: #050915;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(101, 229, 223, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.btn-ghost {
+  background: rgba(243, 246, 255, 0.06);
+  color: var(--text);
+  border: 1px solid rgba(243, 246, 255, 0.16);
+}
+
+.hero {
+  padding: 56px 0 38px;
+}
+
+.kicker {
+  color: var(--aqua);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin-top: 12px;
+  font-size: clamp(2.2rem, 7vw, 4.9rem);
+  line-height: 1.04;
+  max-width: 13ch;
+}
+
+.lead {
+  margin-top: 16px;
+  max-width: 66ch;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: 26px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.metrics {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metrics article {
+  background: linear-gradient(145deg, rgba(17, 26, 56, 0.85), rgba(25, 35, 71, 0.86));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.metrics strong {
+  display: block;
+  font-family: "Sora", sans-serif;
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.metrics span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.section {
+  padding: 54px 0;
+}
+
+.section-head h2 {
+  margin-top: 10px;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
+  max-width: 18ch;
+}
+
+.cards {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: linear-gradient(160deg, rgba(17, 26, 56, 0.96), rgba(16, 22, 48, 0.94));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.card h3 {
+  font-size: 1.34rem;
+}
+
+.card p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.work-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 14px;
+}
+
+.work {
+  min-height: 190px;
+  background:
+    linear-gradient(170deg, rgba(25, 35, 71, 0.95), rgba(13, 18, 38, 0.95)),
+    radial-gradient(circle at 82% 14%, rgba(109, 130, 255, 0.35), transparent 45%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.work.large {
+  grid-row: span 2;
+  min-height: 395px;
+}
+
+.work span {
+  color: var(--aqua);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.work h3 {
+  margin-top: 10px;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.pricing-grid {
+  margin-top: 22px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.price-card h3 {
+  font-size: 1.2rem;
+}
+
+.price {
+  margin: 12px 0;
+  font-family: "Sora", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.price-card ul {
+  margin: 0 0 18px;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.price-card.featured {
+  background: linear-gradient(145deg, rgba(101, 229, 223, 0.18), rgba(109, 130, 255, 0.2));
+  border-color: rgba(101, 229, 223, 0.55);
+}
+
+.testimonial {
+  background: linear-gradient(140deg, rgba(255, 141, 182, 0.16), rgba(109, 130, 255, 0.16));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.testimonial p {
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+  line-height: 1.5;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+.cta {
+  text-align: center;
+  background: linear-gradient(160deg, rgba(17, 26, 56, 0.95), rgba(25, 35, 71, 0.95));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.cta p {
+  margin: 14px auto 20px;
+  max-width: 64ch;
+  color: var(--muted);
+}
+
+.footer {
+  padding: 0 0 30px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 980px) {
+  .nav {
+    display: none;
+  }
+
+  .metrics,
+  .cards,
+  .pricing-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work.large {
+    grid-row: auto;
+    min-height: 230px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+}
